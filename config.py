@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    ADMIN_ID: str = Field()
     BOT_TOKEN: str = Field()
     POSTGRES_USER: str = Field()
     POSTGRES_PASSWORD: str = Field()

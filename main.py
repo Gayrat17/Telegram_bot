@@ -18,7 +18,7 @@ from models.regions import Region, District
 
 
 dp = Dispatcher()
-ADMIN_ID = 1318702560
+
 
 
 class Form(StatesGroup):
@@ -86,11 +86,11 @@ async def startup(bot: Bot) -> None:
         BotCommand(command='del', description='Ochirish uchun'),
         BotCommand(command='edit', description='ozgartirish uchun')
     ], scope=BotCommandScopeAllPrivateChats())
-    await bot.send_message(ADMIN_ID, 'bot started!')
+    await bot.send_message(settings.ADMIN_ID, 'bot started!')
 
 
 async def shutdown(bot: Bot) -> None:
-    await bot.send_message(ADMIN_ID, 'bot stopped!')
+    await bot.send_message(settings.ADMIN_ID, 'bot stopped!')
 
 
 async def main() -> None:
