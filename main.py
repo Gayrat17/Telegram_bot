@@ -20,7 +20,6 @@ from models.regions import Region, District
 dp = Dispatcher()
 
 
-
 class Form(StatesGroup):
     first_name = State()
     birthday = State()
