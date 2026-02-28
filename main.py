@@ -13,9 +13,9 @@ from aiogram.types import Message, InlineKeyboardButton, BotCommand, \
     BotCommandScopeAllPrivateChats
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+from config import settings
 from models.regions import Region, District
 
-TOKEN = '8547479977:AAFVw9oJtJox82aVzSwn1iObHqwXt9RMQ_g'
 
 dp = Dispatcher()
 ADMIN_ID = 1318702560
@@ -94,7 +94,7 @@ async def shutdown(bot: Bot) -> None:
 
 
 async def main() -> None:
-    bot = Bot(TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    bot = Bot(settings.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp.startup.register(startup)
     dp.shutdown.register(shutdown)
     await dp.start_polling(bot)
