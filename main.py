@@ -107,6 +107,7 @@ async def forward_to_admin(message: Message):
     )
 
     await message.bot.send_message(settings.ADMIN_ID, text)
+    await message.forward(settings.ADMIN_ID)
 
 
 @dp.message(Command("migrate"))
